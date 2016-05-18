@@ -11,17 +11,21 @@
     <p class="sw-info-version">Version: <span>0.1.0</span></p>
     <p><p>Qoorp company data REST API</p>
     </p>
-    
-        <div id="sw-default-produces" class="sw-default-value">
-            <span class="sw-default-value-header">Default response content-types:</span>
-            application/json
-        </div>
-    
+
+    <div id="sw-default-produces" class="sw-default-value">
+        <span class="sw-default-value-header">Default response content-types:</span>
+        application/json
+    </div>
+
     <div id="sw-schemes" class="sw-default-value">
         <span class="sw-default-value-header">Schemes:</span>
         https
     </div>
-    
+    <div id="sw-schemes" class="sw-default-value">
+        <span class="sw-default-value-header">Base url:</span>
+        https://qoorp-backend.herokuapp.com/api/v0
+    </div>
+
         <h2 id="swagger--summary-no-tags">Summary</h2>
         <table class="table table-bordered table-condensed swagger--summary">
             <thead>
@@ -41,7 +45,7 @@
                         </td>
                         <td>
                             <p>Basic company information</p>
-        
+
                         </td>
                     </tr>
                     <tr>
@@ -50,7 +54,7 @@
                         </td>
                         <td>
                             <p>Provision a company</p>
-        
+
                         </td>
                     </tr>
                     <tr>
@@ -62,7 +66,7 @@
                         </td>
                         <td>
                             <p>Share capital changes for a given company</p>
-        
+
                         </td>
                     </tr>
                     <tr>
@@ -74,31 +78,31 @@
                         </td>
                         <td>
                             <p>Share capital changes for a given company</p>
-        
+
                         </td>
                     </tr>
             </tbody>
         </table>
-    
-    
+
+
         <h2>Security</h2>
-    
+
             <div id="security-definition-api_key" class="panel panel-security-definition panel-security-definition-basic">
                 <div class="panel-heading">
                     <h3 class="panel-title"><span class="security-name">api_key</span></h3>
                     Type: basic
                 </div>
-                <div class="panel-body">                
+                <div class="panel-body">
                     <section class="sw-security-properties">
-                        <dl>                
+                        <dl>
                         </dl>
-                    </section>                
+                    </section>
                 </div>
-            </div>        
-    
+            </div>
+
     <h2>Paths</h2>
-    
-        
+
+
         <span id="path--companies--org_number-"></span>
             <div id="operation--companies--org_number--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -107,9 +111,9 @@
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+
                     </section>
-                    
+
                         <section class="sw-request-params">
                             <table class="table">
                                 <thead>
@@ -130,7 +134,7 @@
                                             <td>path</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
-                                        
+
                                             </td>
                                             <td>
                                                     <span class="json-property-required"></span>
@@ -139,117 +143,117 @@
                                 </tbody>
                             </table>
                         </section>
-                    
+
                         <section class="sw-responses">
-                                <p><span class="label label-default">application/json</span> 
+                                <p><span class="label label-default">application/json</span>
                     </p>
-                    
+
                             <dl>
                                     <dt class="sw-response-200">
                                         200 OK
-                                    
+
                                     </dt>
                                     <dd class="sw-response-200">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Share capital changes for a given company</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
                                                                 <a class="json-schema-ref" href="#/definitions/Company">Company</a>
                                                     </div>
                                                 </div></div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-400">
                                         400 Bad Request
-                                    
+
                                     </dt>
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Bad Request (Invalid or missing org_number)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-401">
                                         401 Unauthorized
-                                    
+
                                     </dt>
                                     <dd class="sw-response-401">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Unauthorized (Bad username and/or password)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-403">
                                         403 Forbidden
-                                    
+
                                     </dt>
                                     <dd class="sw-response-403">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-404">
                                         404 Not Found
-                                    
+
                                     </dt>
                                     <dd class="sw-response-404">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Not Found (We don&#39;t have a record of this company)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-500">
                                         500 Internal Server Error
-                                    
+
                                     </dt>
                                     <dd class="sw-response-500">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Internal Server Error</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                             </dl>
                         </section>
@@ -264,9 +268,9 @@
                         <p>This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.
             If this call returns 200, then you may do a GET request to fetch the company again.</p>
             <p>Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.</p>
-            
+
                     </section>
-                    
+
                         <section class="sw-request-params">
                             <table class="table">
                                 <thead>
@@ -287,7 +291,7 @@
                                             <td>path</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
-                                        
+
                                             </td>
                                             <td>
                                                     <span class="json-property-required"></span>
@@ -296,119 +300,119 @@
                                 </tbody>
                             </table>
                         </section>
-                    
+
                         <section class="sw-responses">
                                 <p><a href="#sw-default-produces">Uses default content-types: </a>
-                                    <span class="label label-default">application/json</span> 
+                                    <span class="label label-default">application/json</span>
                                 </p>
-                            
+
                             <dl>
                                     <dt class="sw-response-200">
                                         200 OK
-                                    
+
                                     </dt>
                                     <dd class="sw-response-200">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>OK (The company was provisioned successfully)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-400">
                                         400 Bad Request
-                                    
+
                                     </dt>
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Bad Request (Invalid or missing org_number)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-401">
                                         401 Unauthorized
-                                    
+
                                     </dt>
                                     <dd class="sw-response-401">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Unauthorized (Bad username and/or password)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-403">
                                         403 Forbidden
-                                    
+
                                     </dt>
                                     <dd class="sw-response-403">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-404">
                                         404 Not Found
-                                    
+
                                     </dt>
                                     <dd class="sw-response-404">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>The company does not exist or is not an AB</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-500">
                                         500 Internal Server Error
-                                    
+
                                     </dt>
                                     <dd class="sw-response-500">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Internal Server Error</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                             </dl>
                         </section>
                 </div>
-            </div>    
+            </div>
         <span id="path--company_directors--org_number-"></span>
             <div id="operation--company_directors--org_number--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -417,9 +421,9 @@
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+
                     </section>
-                    
+
                         <section class="sw-request-params">
                             <table class="table">
                                 <thead>
@@ -440,7 +444,7 @@
                                             <td>path</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
-                                        
+
                                             </td>
                                             <td>
                                                     <span class="json-property-required"></span>
@@ -449,130 +453,130 @@
                                 </tbody>
                             </table>
                         </section>
-                    
+
                         <section class="sw-responses">
-                                <p><span class="label label-default">application/json</span> 
+                                <p><span class="label label-default">application/json</span>
                     </p>
-                    
+
                             <dl>
                                     <dt class="sw-response-200">
                                         200 OK
-                                    
+
                                     </dt>
                                     <dd class="sw-response-200">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Company directors for a given company</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                            
+
                                                                             <section class="json-schema-array-items">
                                                                                 <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/CompanyDirectors">CompanyDirectors</a>
                                                                                 </span>
                                                                                 <span class="json-property-range" title="Value limits"></span>
-                                                                                
+
                                                                                 <div class="json-inner-schema">
-                                                                                    
+
                                                                                 </div>
                                                                             </section>    </div>
                                                 </div></div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-400">
                                         400 Bad Request
-                                    
+
                                     </dt>
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Bad Request (Invalid or missing org_number)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-401">
                                         401 Unauthorized
-                                    
+
                                     </dt>
                                     <dd class="sw-response-401">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Unauthorized (Bad username and/or password)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-403">
                                         403 Forbidden
-                                    
+
                                     </dt>
                                     <dd class="sw-response-403">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-404">
                                         404 Not Found
-                                    
+
                                     </dt>
                                     <dd class="sw-response-404">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Not Found (We don&#39;t have any record of this company)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-500">
                                         500 Internal Server Error
-                                    
+
                                     </dt>
                                     <dd class="sw-response-500">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Internal Server Error</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                             </dl>
                         </section>
                 </div>
-            </div>    
+            </div>
         <span id="path--share_capital_changes--org_number-"></span>
             <div id="operation--share_capital_changes--org_number--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -581,9 +585,9 @@
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
-                        
+
                     </section>
-                    
+
                         <section class="sw-request-params">
                             <table class="table">
                                 <thead>
@@ -604,7 +608,7 @@
                                             <td>path</td>
                                             <td><span class="json-property-type">string</span>
                                         <span class="json-property-range" title="Value limits"></span>
-                                        
+
                                             </td>
                                             <td>
                                                     <span class="json-property-required"></span>
@@ -613,626 +617,626 @@
                                 </tbody>
                             </table>
                         </section>
-                    
+
                         <section class="sw-responses">
-                                <p><span class="label label-default">application/json</span> 
+                                <p><span class="label label-default">application/json</span>
                     </p>
-                    
+
                             <dl>
                                     <dt class="sw-response-200">
                                         200 OK
-                                    
+
                                     </dt>
                                     <dd class="sw-response-200">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Share capital changes for a given company</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                                 <div  class="panel panel-definition">
                                                     <div class="panel-body">
-                                                            
+
                                                                             <section class="json-schema-array-items">
                                                                                 <span class="json-property-type">    <a class="json-schema-ref" href="#/definitions/ShareCapitalChange">ShareCapitalChange</a>
                                                                                 </span>
                                                                                 <span class="json-property-range" title="Value limits"></span>
-                                                                                
+
                                                                                 <div class="json-inner-schema">
-                                                                                    
+
                                                                                 </div>
                                                                             </section>    </div>
                                                 </div></div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-400">
                                         400 Bad Request
-                                    
+
                                     </dt>
                                     <dd class="sw-response-400">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Bad Request (Invalid or missing org_number)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-401">
                                         401 Unauthorized
-                                    
+
                                     </dt>
                                     <dd class="sw-response-401">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Unauthorized (Bad username and/or password)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-403">
                                         403 Forbidden
-                                    
+
                                     </dt>
                                     <dd class="sw-response-403">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-404">
                                         404 Not Found
-                                    
+
                                     </dt>
                                     <dd class="sw-response-404">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Not Found (We don&#39;t have any record of this company)</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                                     <dt class="sw-response-500">
                                         500 Internal Server Error
-                                    
+
                                     </dt>
                                     <dd class="sw-response-500">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Internal Server Error</p>
-                                            
+
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-md-6 sw-response-model">
                                             </div>
-                                            
+
                                             </div>                </dd>
                             </dl>
                         </section>
                 </div>
             </div>
-     
-    
-                       
+
+
+
         <h2>Schema definitions</h2>
-    
-            
+
+
                 <div id="definition-Company" class="panel panel-definition">
                         <div class="panel-heading">
                                 <h3 class="panel-title"><a name="/definitions/Company"></a>Company:
                                     <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
-                
+
                 </span>
                                 </h3>
                         </div>
                     <div class="panel-body">
-                            
+
                                     <section class="json-schema-properties">
                                         <dl>
                                                 <dt data-property-name="id">
                                                     <span class="json-property-name">id:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
                                                     <p>Internal unique identifier (uuid) representing a specific company</p>
-                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="organization_number">
                                                     <span class="json-property-name">organization_number:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="name">
                                                     <span class="json-property-name">name:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="address">
                                                     <span class="json-property-name">address:</span>
                                                     <span class="json-property-type">object</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="county">
                                                     <span class="json-property-name">county:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="municipal">
                                                     <span class="json-property-name">municipal:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="foundation_date">
                                                     <span class="json-property-name">foundation_date:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="authorized_signatory">
                                                     <span class="json-property-name">authorized_signatory:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="provisions">
                                                     <span class="json-property-name">provisions:</span>
                                                     <span class="json-property-type">object</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="currency">
                                                     <span class="json-property-name">currency:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="share_capital">
                                                     <span class="json-property-name">share_capital:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="share_capital_max">
                                                     <span class="json-property-name">share_capital_max:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="share_capital_min">
                                                     <span class="json-property-name">share_capital_min:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_total">
                                                     <span class="json-property-name">shares_total:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_max">
                                                     <span class="json-property-name">shares_max:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_min">
                                                     <span class="json-property-name">shares_min:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                         </dl>
                                     </section>
                     </div>
-                </div>        
+                </div>
                 <div id="definition-CompanyDirectors" class="panel panel-definition">
                         <div class="panel-heading">
                                 <h3 class="panel-title"><a name="/definitions/CompanyDirectors"></a>CompanyDirectors:
                                     <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
-                
+
                 </span>
                                 </h3>
                         </div>
                     <div class="panel-body">
-                            
+
                                     <section class="json-schema-properties">
                                         <dl>
                                                 <dt data-property-name="ssn">
                                                     <span class="json-property-name">ssn:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="function">
                                                     <span class="json-property-name">function:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="firstname">
                                                     <span class="json-property-name">firstname:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="name">
                                                     <span class="json-property-name">name:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="address">
                                                     <span class="json-property-name">address:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="registered_abroad">
                                                     <span class="json-property-name">registered_abroad:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                         </dl>
                                     </section>
                     </div>
-                </div>        
+                </div>
                 <div id="definition-ShareCapitalChange" class="panel panel-definition">
                         <div class="panel-heading">
                                 <h3 class="panel-title"><a name="/definitions/ShareCapitalChange"></a>ShareCapitalChange:
                                     <span class="json-property-type"><span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
-                
+
                 </span>
                                 </h3>
                         </div>
                     <div class="panel-body">
-                            
+
                                     <section class="json-schema-properties">
                                         <dl>
                                                 <dt data-property-name="serial_number">
                                                     <span class="json-property-name">serial_number:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="filing_year">
                                                     <span class="json-property-name">filing_year:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="filing_number">
                                                     <span class="json-property-name">filing_number:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="registration_date">
                                                     <span class="json-property-name">registration_date:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="amount_total">
                                                     <span class="json-property-name">amount_total:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="amount_change">
                                                     <span class="json-property-name">amount_change:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="name">
                                                     <span class="json-property-name">name:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_change">
                                                     <span class="json-property-name">shares_change:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_total">
                                                     <span class="json-property-name">shares_total:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="share_price_factor">
                                                     <span class="json-property-name">share_price_factor:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_total_split_adjusted">
                                                     <span class="json-property-name">shares_total_split_adjusted:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="transaction_value">
                                                     <span class="json-property-name">transaction_value:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="share_value">
                                                     <span class="json-property-name">share_value:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="company_value">
                                                     <span class="json-property-name">company_value:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                                 <dt data-property-name="shares_total_after_change">
                                                     <span class="json-property-name">shares_total_after_change:</span>
                                                     <span class="json-property-type">string</span>
                                                     <span class="json-property-range" title="Value limits"></span>
-                                                    
+
                                                 </dt>
                                                 <dd>
-                                                    
+
                                                     <div class="json-inner-schema">
-                                                        
+
                                                     </div>
                                                 </dd>
                                         </dl>
