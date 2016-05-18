@@ -1,0 +1,221 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: Qoorp API
+  description: Qoorp company data REST API
+  version: "0.1.0"
+# the domain of the service
+host: qoorp-backend.herokuapp.com
+# array of all schemes that your API supports
+schemes:
+  - https
+security: [api_key: []]
+securityDefinitions:
+  api_key:
+    type: basic
+# will be prefixed to all paths
+basePath: /api/v0
+produces:
+  - application/json
+paths:
+  /companies/{org_number}:
+    get:
+      summary: Basic company information
+      produces:
+        - application/json
+      parameters:
+      - in: path
+        name: org_number
+        description: Organization number
+        required: true
+        type: string
+        pattern: "^\\d{6}-?\\d{4}$"
+      responses:
+        200:
+          description: Share capital changes for a given company
+          schema:
+            $ref: '#/definitions/Company'
+        400:
+          description: Bad Request (Invalid or missing org_number)
+        401:
+          description: Unauthorized (Bad username and/or password)
+        403:
+          description: Forbidden (You're not allowed to use this endpoint)
+        404:
+          description: Not Found (We don't have a record of this company)
+        500:
+          description: Internal Server Error
+    post:
+      summary: Provision a company
+      description: |
+        This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.
+        If this call returns 200, then you may do a GET request to fetch the company again.
+
+        Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.
+      parameters:
+      - in: path
+        name: org_number
+        description: Organization number
+        required: true
+        type: string
+        pattern: "^\\d{6}-?\\d{4}$"
+      responses:
+        200:
+          description: OK (The company was provisioned successfully)
+        400:
+          description: Bad Request (Invalid or missing org_number)
+        401:
+          description: Unauthorized (Bad username and/or password)
+        403:
+          description: Forbidden (You're not allowed to use this endpoint)
+        404:
+          description: The company does not exist or is not an AB
+        500:
+          description: Internal Server Error
+  /share_capital_changes/{org_number}:
+    get:
+      summary: Share capital changes for a given company
+      produces:
+        - application/json
+      parameters:
+      - in: path
+        name: org_number
+        description: Organization number
+        required: true
+        type: string
+        pattern: "^\\d{6}-?\\d{4}$"
+      responses:
+        200:
+          description: Share capital changes for a given company
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ShareCapitalChange'
+        400:
+          description: Bad Request (Invalid or missing org_number)
+        401:
+          description: Unauthorized (Bad username and/or password)
+        403:
+          description: Forbidden (You're not allowed to use this endpoint)
+        404:
+          description: Not Found (We don't have any record of this company)
+        500:
+          description: Internal Server Error
+  /company_directors/{org_number}:
+    get:
+      summary: Share capital changes for a given company
+      produces:
+        - application/json
+      parameters:
+      - in: path
+        name: org_number
+        description: Organization number
+        required: true
+        type: string
+        pattern: "^\\d{6}-?\\d{4}$"
+      responses:
+        200:
+          description: Company directors for a given company
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CompanyDirectors'
+        400:
+          description: Bad Request (Invalid or missing org_number)
+        401:
+          description: Unauthorized (Bad username and/or password)
+        403:
+          description: Forbidden (You're not allowed to use this endpoint)
+        404:
+          description: Not Found (We don't have any record of this company)
+        500:
+          description: Internal Server Error
+
+definitions:
+  Company:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Internal unique identifier (uuid) representing a specific company
+      organization_number:
+        type: string
+      name:
+        type: string
+      address:
+        type: object
+      county:
+        type: string
+      municipal:
+        type: string
+      foundation_date:
+        type: string
+      authorized_signatory:
+        type: string
+      provisions:
+        type: object
+      currency:
+        type: string
+      share_capital:
+        type: string
+      share_capital_max:
+        type: string
+      share_capital_min:
+        type: string
+      shares_total:
+        type: string
+      shares_max:
+        type: string
+      shares_min:
+        type: string
+
+  ShareCapitalChange:
+    type: object
+    properties:
+      serial_number:
+        type: string
+      filing_year:
+        type: string
+      filing_number:
+        type: string
+      registration_date:
+        type: string
+      amount_total:
+        type: string
+      amount_change:
+        type: string
+      name:
+        type: string
+      shares_change:
+        type: string
+      shares_total:
+        type: string
+      share_price_factor:
+        type: string
+      shares_total_split_adjusted:
+        type: string
+      transaction_value:
+        type: string
+      share_value:
+        type: string
+      company_value:
+        type: string
+      shares_total_after_change:
+        type: string
+
+  CompanyDirectors:
+    type: object
+    properties:
+      ssn:
+        type: string
+      function:
+        type: string
+      firstname:
+        type: string
+      name:
+        type: string
+      address:
+        type: string
+      registered_abroad:
+        type: string
