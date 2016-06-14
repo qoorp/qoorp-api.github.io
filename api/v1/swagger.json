@@ -1,0 +1,344 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Qoorp API",
+        "description": "Qoorp company data REST API",
+        "version": "1.0.0"
+    },
+    "host": "api.qoorp.com",
+    "schemes": [
+        "https"
+    ],
+    "security": [
+        {
+            "api_key": []
+        }
+    ],
+    "securityDefinitions": {
+        "api_key": {
+            "type": "basic"
+        }
+    },
+    "basePath": "/api/v0",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/companies/{organization_number}": {
+            "get": {
+                "summary": "Basic company information",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "organization_number",
+                        "description": "Organization number",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "^\\d{6}-?\\d{4}$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Share capital changes for a given company",
+                        "schema": {
+                            "$ref": "#/definitions/Company"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request (Invalid or missing organization_number)"
+                    },
+                    "401": {
+                        "description": "Unauthorized (Bad username and/or password)"
+                    },
+                    "403": {
+                        "description": "Forbidden (You're not allowed to use this endpoint)"
+                    },
+                    "404": {
+                        "description": "Not Found (We don't have a record of this company)"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Provision a company",
+                "description": "This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.\nIf this call returns 200, then you may do a GET request to fetch the company again.\n\nWarning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.\n",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "organization_number",
+                        "description": "Organization number",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "^\\d{6}-?\\d{4}$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK (The company was provisioned successfully)"
+                    },
+                    "400": {
+                        "description": "Bad Request (Invalid or missing organization_number)"
+                    },
+                    "401": {
+                        "description": "Unauthorized (Bad username and/or password)"
+                    },
+                    "403": {
+                        "description": "Forbidden (You're not allowed to use this endpoint)"
+                    },
+                    "404": {
+                        "description": "The company does not exist or is not an AB"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/companies/{organization_number}/share_capital_changes": {
+            "get": {
+                "summary": "Share capital changes for a given company",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "organization_number",
+                        "description": "Organization number",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "^\\d{6}-?\\d{4}$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Share capital changes for a given company",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ShareCapitalChange"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request (Invalid or missing organization_number)"
+                    },
+                    "401": {
+                        "description": "Unauthorized (Bad username and/or password)"
+                    },
+                    "403": {
+                        "description": "Forbidden (You're not allowed to use this endpoint)"
+                    },
+                    "404": {
+                        "description": "Not Found (We don't have any record of this company)"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/companies/{organization_number}/company_directors": {
+            "get": {
+                "summary": "Share capital changes for a given company",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "organization_number",
+                        "description": "Organization number",
+                        "required": true,
+                        "type": "string",
+                        "pattern": "^\\d{6}-?\\d{4}$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Company directors for a given company",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/CompanyDirectors"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request (Invalid or missing org_number)"
+                    },
+                    "401": {
+                        "description": "Unauthorized (Bad username and/or password)"
+                    },
+                    "403": {
+                        "description": "Forbidden (You're not allowed to use this endpoint)"
+                    },
+                    "404": {
+                        "description": "Not Found (We don't have any record of this company)"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Company": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Internal unique identifier (uuid) representing a specific company"
+                },
+                "organization_number": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "object"
+                },
+                "county": {
+                    "type": "string"
+                },
+                "municipal": {
+                    "type": "string"
+                },
+                "foundation_date": {
+                    "type": "string"
+                },
+                "authorized_signatory": {
+                    "type": "string"
+                },
+                "provisions": {
+                    "type": "object"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "share_capital": {
+                    "type": "string"
+                },
+                "share_capital_max": {
+                    "type": "string"
+                },
+                "share_capital_min": {
+                    "type": "string"
+                },
+                "shares_total": {
+                    "type": "string"
+                },
+                "shares_max": {
+                    "type": "string"
+                },
+                "shares_min": {
+                    "type": "string"
+                }
+            }
+        },
+        "ShareCapitalChange": {
+            "type": "object",
+            "properties": {
+                "serial_number": {
+                    "type": "string"
+                },
+                "filing_year": {
+                    "type": "string"
+                },
+                "filing_number": {
+                    "type": "string"
+                },
+                "registration_date": {
+                    "type": "string"
+                },
+                "decision_date": {
+                    "type": "string"
+                },
+                "decision_maker": {
+                    "type": "string"
+                },
+                "amount_total": {
+                    "type": "string"
+                },
+                "amount_change": {
+                    "type": "string"
+                },
+                "amount_total_before_change": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "settled_by": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shares_change": {
+                    "type": "string"
+                },
+                "shares_total": {
+                    "type": "string"
+                },
+                "share_price_factor": {
+                    "type": "string"
+                },
+                "shares_change_split_adjusted": {
+                    "type": "string"
+                },
+                "shares_total_split_adjusted": {
+                    "type": "string"
+                },
+                "transaction_value": {
+                    "type": "string"
+                },
+                "share_value": {
+                    "type": "string"
+                },
+                "share_value_split_adjusted": {
+                    "type": "string"
+                },
+                "company_value": {
+                    "type": "string"
+                },
+                "company_value_pre_money": {
+                    "type": "string"
+                },
+                "founders_share_fraction": {
+                    "type": "string"
+                }
+            }
+        },
+        "CompanyDirectors": {
+            "type": "object",
+            "properties": {
+                "ssn": {
+                    "type": "string"
+                },
+                "function": {
+                    "type": "string"
+                },
+                "firstname": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "registered_abroad": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
