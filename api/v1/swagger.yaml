@@ -46,7 +46,7 @@ paths:
           description: Not Found (We don't have a record of this company)
         500:
           description: Internal Server Error
-  /companies/:
+  /companies:
     post:
       summary: Provision a company
       description: |

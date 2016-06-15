@@ -65,7 +65,7 @@
                 }
             }
         },
-        "/companies/": {
+        "/companies": {
             "post": {
                 "summary": "Provision a company",
                 "description": "This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.\nIf this call returns 200, then you may do a GET request to fetch the company again.\n\nWarning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.\n",
