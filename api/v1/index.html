@@ -25,6 +25,7 @@
         <span class="sw-default-value-header">Base url:</span>
         https://api.qoorp.com/api/v1
     </div>
+
         <h2 id="swagger--summary-no-tags">Summary</h2>
         <table class="table table-bordered table-condensed swagger--summary">
             <thead>
@@ -36,7 +37,19 @@
             </thead>
             <tbody>
                     <tr>
-                            <td class="swagger--summary-path" rowspan="2">
+                            <td class="swagger--summary-path" rowspan="1">
+                                <a href="#path--companies-">/companies/</a>
+                            </td>
+                        <td>
+                            <a href="#operation--companies--post">POST</a>
+                        </td>
+                        <td>
+                            <p>Provision a company</p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                            <td class="swagger--summary-path" rowspan="1">
                                 <a href="#path--companies--organization_number-">/companies/{organization_number}</a>
                             </td>
                         <td>
@@ -44,15 +57,6 @@
                         </td>
                         <td>
                             <p>Basic company information</p>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#operation--companies--organization_number--post">POST</a>
-                        </td>
-                        <td>
-                            <p>Provision a company</p>
 
                         </td>
                     </tr>
@@ -102,6 +106,148 @@
     <h2>Paths</h2>
 
 
+        <span id="path--companies-"></span>
+            <div id="operation--companies--post" class="swagger--panel-operation-post panel">
+                <div class="panel-heading">
+                    <div class="operation-summary">Provision a company</div>
+                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/companies/</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <section class="sw-operation-description">
+                        <p>This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.
+            If this call returns 200, then you may do a GET request to fetch the company again.</p>
+            <p>Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.</p>
+
+                    </section>
+
+                            <section class="sw-request-body">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Organization number</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                        </div>
+                                        </div>
+                            </section>
+
+                        <section class="sw-responses">
+                                <p><a href="#sw-default-produces">Uses default content-types: </a>
+                                    <span class="label label-default">application/json</span>
+                                </p>
+
+                            <dl>
+                                    <dt class="sw-response-200">
+                                        200 OK
+
+                                    </dt>
+                                    <dd class="sw-response-200">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>OK (The company was provisioned successfully)</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                                <div  class="panel panel-definition">
+                                                    <div class="panel-body">
+                                                                <a class="json-schema-ref" href="#/definitions/Company">Company</a>
+                                                    </div>
+                                                </div></div>
+
+                                            </div>                </dd>
+                                    <dt class="sw-response-400">
+                                        400 Bad Request
+
+                                    </dt>
+                                    <dd class="sw-response-400">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Bad Request (Invalid or missing organization_number)</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+
+                                            </div>                </dd>
+                                    <dt class="sw-response-401">
+                                        401 Unauthorized
+
+                                    </dt>
+                                    <dd class="sw-response-401">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Unauthorized (Bad username and/or password)</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+
+                                            </div>                </dd>
+                                    <dt class="sw-response-403">
+                                        403 Forbidden
+
+                                    </dt>
+                                    <dd class="sw-response-403">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+
+                                            </div>                </dd>
+                                    <dt class="sw-response-404">
+                                        404 Not Found
+
+                                    </dt>
+                                    <dd class="sw-response-404">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>The company does not exist or is not an AB</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+
+                                            </div>                </dd>
+                                    <dt class="sw-response-500">
+                                        500 Internal Server Error
+
+                                    </dt>
+                                    <dd class="sw-response-500">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>Internal Server Error</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6 sw-response-model">
+                                            </div>
+
+                                            </div>                </dd>
+                            </dl>
+                        </section>
+                </div>
+            </div>
         <span id="path--companies--organization_number-"></span>
             <div id="operation--companies--organization_number--get" class="swagger--panel-operation-get panel">
                 <div class="panel-heading">
@@ -228,160 +374,6 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>Not Found (We don&#39;t have a record of this company)</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                                    <dt class="sw-response-500">
-                                        500 Internal Server Error
-
-                                    </dt>
-                                    <dd class="sw-response-500">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>Internal Server Error</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                            </dl>
-                        </section>
-                </div>
-            </div>    <div id="operation--companies--organization_number--post" class="swagger--panel-operation-post panel">
-                <div class="panel-heading">
-                    <div class="operation-summary">Provision a company</div>
-                    <h3 class="panel-title"><span class="operation-name">POST</span> <strong>/companies/{organization_number}</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <section class="sw-operation-description">
-                        <p>This tells our backend to produce a company instance, this should only be done once and if the above GET request returns 404.
-            If this call returns 200, then you may do a GET request to fetch the company again.</p>
-            <p>Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.</p>
-
-                    </section>
-
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                organization_number
-                                            <td><p>Organization number</p>
-                                        </td>
-                                            <td>path</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
-
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
-
-                        <section class="sw-responses">
-                                <p><a href="#sw-default-produces">Uses default content-types: </a>
-                                    <span class="label label-default">application/json</span>
-                                </p>
-
-                            <dl>
-                                    <dt class="sw-response-200">
-                                        200 OK
-
-                                    </dt>
-                                    <dd class="sw-response-200">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>OK (The company was provisioned successfully)</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                                    <dt class="sw-response-400">
-                                        400 Bad Request
-
-                                    </dt>
-                                    <dd class="sw-response-400">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>Bad Request (Invalid or missing organization_number)</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                                    <dt class="sw-response-401">
-                                        401 Unauthorized
-
-                                    </dt>
-                                    <dd class="sw-response-401">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>Unauthorized (Bad username and/or password)</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                                    <dt class="sw-response-403">
-                                        403 Forbidden
-
-                                    </dt>
-                                    <dd class="sw-response-403">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>Forbidden (You&#39;re not allowed to use this endpoint)</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="row">
-
-                                                <div class="col-md-6 sw-response-model">
-                                            </div>
-
-                                            </div>                </dd>
-                                    <dt class="sw-response-404">
-                                        404 Not Found
-
-                                    </dt>
-                                    <dd class="sw-response-404">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>The company does not exist or is not an AB</p>
 
                                                 </div>
                                             </div>
