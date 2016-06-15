@@ -150,7 +150,7 @@
         },
         "/companies/{organization_number}/company_directors": {
             "get": {
-                "summary": "Share capital changes for a given company",
+                "summary": "Company directors for a given company",
                 "produces": [
                     "application/json"
                 ],
