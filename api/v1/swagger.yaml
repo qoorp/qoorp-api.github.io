@@ -55,9 +55,9 @@ paths:
 
         Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.
       parameters:
-      - in: body
+      - in: body (json object)
         name: organization_number
-        description: Organization number
+        description: organization_number
         required: true
         type: string
         pattern: "^\\d{6}-?\\d{4}$"
