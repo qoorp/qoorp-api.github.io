@@ -57,14 +57,16 @@ paths:
       parameters:
         - name: organization_number
           in: body
-          description: Pet to add to the store
+          description: Organization number
           required: true
           schema:
             required:
-              - organization_number
+              - organization_number  
             properties:
               organization_number:
                 type: string
+      consumes:
+        - application/json
       responses:
         200:
           description: OK (The company was provisioned successfully)
@@ -241,7 +243,7 @@ definitions:
         description: (total antal aktier efter aktuell händelse)
       share_price_factor:
         type: string
-        description: (kvotvärdet vid aktuell händelse, alltså <aktiekapital>/<aktier>)
+        description: (kvotvärdet vid aktuell händelse, alltså [aktiekapital]/[aktier])
       shares_change_split_adjusted:
         type: string
         description: (splitjusterat shares_change)
@@ -287,3 +289,4 @@ definitions:
       registered_abroad:
         type: string
         description: (om personen är registrerad utomlands)
+
