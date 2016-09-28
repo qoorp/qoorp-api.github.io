@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <h1>Qoorp API</h1>
-    <p class="sw-info-version">Version: <span>1.0.0</span></p>
+    <p class="sw-info">Base URL: <span class="sw-info-basePath">https://qoorp.api.com/api/v1</span>, Version: <span class="sw-info-version">1.0.0</span></p>
     <p><p>Qoorp company data REST API</p>
     </p>
 
@@ -20,10 +20,6 @@
     <div id="sw-schemes" class="sw-default-value">
         <span class="sw-default-value-header">Schemes:</span>
         https
-    </div>
-    <div id="sw-schemes" class="sw-default-value">
-        <span class="sw-default-value-header">Base url:</span>
-        https://api.qoorp.com/api/v1
     </div>
 
         <h2 id="swagger--summary-no-tags">Summary</h2>
@@ -120,35 +116,38 @@
 
                     </section>
 
-                        <section class="sw-request-params">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="sw-param-name"></th>
-                                    <th class="sw-param-description"></th>
-                                    <th class="sw-param-type"></th>
-                                    <th class="sw-param-data-type"></th>
-                                    <th class="sw-param-annotation"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                        <tr>
-                                            <td>
-                                                organization_number
-                                            <td><p>organization_number</p>
-                                        </td>
-                                            <td>body (json object)</td>
-                                            <td><span class="json-property-type">string</span>
-                                        <span class="json-property-range" title="Value limits"></span>
+                            <section class="sw-request-body">
 
-                                            </td>
-                                            <td>
-                                                    <span class="json-property-required"></span>
-                                            </td>
-                                        </tr>
-                                </tbody>
-                            </table>
-                        </section>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><p>Pet to add to the store</p>
+                        </p>
+                                            </div>
+                                            <div class="col-md-6 sw-request-model">
+                            <div  class="panel panel-definition">
+                                <div class="panel-body">
+
+                                            <section class="json-schema-properties">
+                                                <dl>
+                                                        <dt data-property-name="organization_number">
+                                                            <span class="json-property-name">organization_number:</span>
+                                                            <span class="json-property-type">string</span>
+                                                            <span class="json-property-range" title="Value limits"></span>
+
+                                                                <span class="json-property-required"></span>
+                                                        </dt>
+                                                        <dd>
+
+                                                            <div class="json-inner-schema">
+
+                                                            </div>
+                                                        </dd>
+                                                </dl>
+                                            </section>
+                                </div>
+                            </div></div>
+                                        </div>
+                            </section>
 
                         <section class="sw-responses">
                                 <p><a href="#sw-default-produces">Uses default content-types: </a>
@@ -594,6 +593,7 @@
                 </div>
                 <div class="panel-body">
                     <section class="sw-operation-description">
+                        <p>These objects are not sorted, you client needs to sort them by (filing_year, filing_number, serial_number)</p>
 
                     </section>
 
@@ -789,6 +789,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(organisationsnummer)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -801,6 +802,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(namn)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -813,6 +815,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(adress)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -825,6 +828,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(län)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -837,6 +841,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(kommun)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -849,6 +854,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(datum när företaget bildades)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -861,6 +867,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(firmatäcknare, fritext)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -873,6 +880,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>not used, don&#39;t bother with this one yet.</p>
 
                                                     <div class="json-inner-schema">
 
@@ -885,6 +893,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(aktiekapitalets valuta)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -897,6 +906,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(bolagets aktiekapital)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -909,6 +919,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(max aktiekapital enligt bolagsordningen)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -921,6 +932,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(minsta aktiekapital enligt bolagsordningen)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -933,6 +945,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(antal aktier i bolaget)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -945,6 +958,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(max antal aktier i bolaget enligt bolagsordningen)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -957,6 +971,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(minst antal aktier i bolaget enligt bolagsordningen)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -986,6 +1001,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(personnr)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -998,6 +1014,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(funktion i styrelsen/företaget, exempelvis &quot;verkställande direktör&quot; || &quot;revisor&quot; o.s.v.)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1010,6 +1027,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(förnamn)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1022,6 +1040,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(efternamn)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1034,6 +1053,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(adress)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1046,6 +1066,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(om personen är registrerad utomlands)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1075,6 +1096,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(löpnummer inom samma diarienummer)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1087,6 +1109,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(årsdelen av diarienummret)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1099,6 +1122,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(unika diarienummer per år)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1111,6 +1135,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(när händelsen registrerades av bolagsverket)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1123,6 +1148,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(när buslutet fattades av bolaget)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1135,6 +1161,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(vem som fattade beslutet, exempelvis styrelsen)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1147,6 +1174,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(aktiekapitalet efter denna händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1159,6 +1187,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(förändrat aktiekapital i och med denna händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1171,6 +1200,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(aktiekapitalet före denna händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1183,6 +1213,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(i vilken valuta aktiekapital var vid aktuell händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1195,6 +1226,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(betalningssätt)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1207,6 +1239,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(namn på händelsen, exempelvis &quot;Nyemission&quot; || &quot;Minskning&quot; o.s.v.)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1219,6 +1252,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(förändrat antal aktier, kan vara negativt)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1231,6 +1265,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(total antal aktier efter aktuell händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1243,6 +1278,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(kvotvärdet vid aktuell händelse, alltså [aktiekapital]/[aktier])</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1255,6 +1291,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(splitjusterat shares_change)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1267,6 +1304,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(splitjusterat shares_total)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1279,6 +1317,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(betalt inklusive överkurs)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1291,6 +1330,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(pris per aktie, alltså transaction_value / shares_change)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1303,6 +1343,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(splitjusterat share_value)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1315,6 +1356,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(bolagets värdering vid aktuell händelse)</p>
 
                                                     <div class="json-inner-schema">
 
@@ -1339,6 +1381,7 @@
 
                                                 </dt>
                                                 <dd>
+                                                    <p>(grundarnas andel kvar efter aktuell händelse)</p>
 
                                                     <div class="json-inner-schema">
 

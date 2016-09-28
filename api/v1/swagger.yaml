@@ -15,7 +15,7 @@ securityDefinitions:
   api_key:
     type: basic
 # will be prefixed to all paths
-basePath: /api/v0
+basePath: /api/v1
 produces:
   - application/json
 paths:
@@ -55,12 +55,16 @@ paths:
 
         Warning! This will not associate a company with your user profile, but will allow you to later fetch information about it via this API.
       parameters:
-      - in: body (json object)
-        name: organization_number
-        description: organization_number
-        required: true
-        type: string
-        pattern: "^\\d{6}-?\\d{4}$"
+        - name: organization_number
+          in: body
+          description: Pet to add to the store
+          required: true
+          schema:
+            required:
+              - organization_number
+            properties:
+              organization_number:
+                type: string
       responses:
         200:
           description: OK (The company was provisioned successfully)
@@ -79,8 +83,10 @@ paths:
   /companies/{organization_number}/share_capital_changes:
     get:
       summary: Share capital changes for a given company
+      description: |
+        These objects are not sorted, you client needs to sort them by (filing_year, filing_number, serial_number)
       produces:
-        - application/json
+      - application/json
       parameters:
       - in: path
         name: organization_number
@@ -109,7 +115,7 @@ paths:
     get:
       summary: Company directors for a given company
       produces:
-        - application/json
+      - application/json
       parameters:
       - in: path
         name: organization_number
@@ -144,101 +150,140 @@ definitions:
         description: Internal unique identifier (uuid) representing a specific company
       organization_number:
         type: string
+        description: (organisationsnummer)
       name:
         type: string
+        description: (namn)
       address:
         type: object
+        description: (adress)
       county:
         type: string
+        description: (län)
       municipal:
         type: string
+        description: (kommun)
       foundation_date:
         type: string
+        description: (datum när företaget bildades)
       authorized_signatory:
         type: string
+        description: (firmatäcknare, fritext)
       provisions:
         type: object
+        description: not used, don't bother with this one yet.
       currency:
         type: string
+        description: (aktiekapitalets valuta)
       share_capital:
         type: string
+        description: (bolagets aktiekapital)
       share_capital_max:
         type: string
+        description: (max aktiekapital enligt bolagsordningen)
       share_capital_min:
         type: string
+        description: (minsta aktiekapital enligt bolagsordningen)
       shares_total:
         type: string
+        description: (antal aktier i bolaget)
       shares_max:
         type: string
+        description: (max antal aktier i bolaget enligt bolagsordningen)
       shares_min:
         type: string
+        description: (minst antal aktier i bolaget enligt bolagsordningen)
 
   ShareCapitalChange:
     type: object
     properties:
       serial_number:
         type: string
+        description: (löpnummer inom samma diarienummer)
       filing_year:
         type: string
+        description: (årsdelen av diarienummret)
       filing_number:
         type: string
+        description: (unika diarienummer per år)
       registration_date:
         type: string
+        description: (när händelsen registrerades av bolagsverket)
       decision_date:
         type: string
-        
+        description: (när buslutet fattades av bolaget)
       decision_maker:
         type: string
+        description: (vem som fattade beslutet, exempelvis styrelsen)
       amount_total:
         type: string
+        description: (aktiekapitalet efter denna händelse)
       amount_change:
         type: string
+        description: (förändrat aktiekapital i och med denna händelse)
       amount_total_before_change:
         type: string
+        description: (aktiekapitalet före denna händelse)
       currency:
         type: string
-        
+        description: (i vilken valuta aktiekapital var vid aktuell händelse)
       settled_by:
         type: string
+        description: (betalningssätt)
       name:
         type: string
+        description: (namn på händelsen, exempelvis "Nyemission" || "Minskning" o.s.v.)
       shares_change:
         type: string
+        description: (förändrat antal aktier, kan vara negativt)
       shares_total:
         type: string
+        description: (total antal aktier efter aktuell händelse)
       share_price_factor:
         type: string
-        
+        description: (kvotvärdet vid aktuell händelse, alltså <aktiekapital>/<aktier>)
       shares_change_split_adjusted:
         type: string
+        description: (splitjusterat shares_change)
       shares_total_split_adjusted:
         type: string
+        description: (splitjusterat shares_total)
       transaction_value:
         type: string
+        description: (betalt inklusive överkurs)
       share_value:
         type: string
+        description: (pris per aktie, alltså transaction_value / shares_change)
       share_value_split_adjusted:
         type: string
-        
+        description: (splitjusterat share_value)
       company_value:
         type: string
+        description: (bolagets värdering vid aktuell händelse)
       company_value_pre_money:
         type: string
       founders_share_fraction:
         type: string
+        description: (grundarnas andel kvar efter aktuell händelse)
 
   CompanyDirectors:
     type: object
     properties:
       ssn:
         type: string
+        description: (personnr)
       function:
         type: string
+        description: (funktion i styrelsen/företaget, exempelvis "verkställande direktör" || "revisor" o.s.v.)
       firstname:
         type: string
+        description: (förnamn)
       name:
         type: string
+        description: (efternamn)
       address:
         type: string
+        description: (adress)
       registered_abroad:
         type: string
+        description: (om personen är registrerad utomlands)
