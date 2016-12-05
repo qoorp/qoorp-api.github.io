@@ -61,7 +61,7 @@ paths:
           required: true
           schema:
             required:
-              - organization_number  
+              - organization_number
             properties:
               organization_number:
                 type: string
@@ -132,6 +132,35 @@ paths:
             type: array
             items:
               $ref: '#/definitions/CompanyDirectors'
+        400:
+          description: Bad Request (Invalid or missing org_number)
+        401:
+          description: Unauthorized (Bad username and/or password)
+        403:
+          description: Forbidden (You're not allowed to use this endpoint)
+        404:
+          description: Not Found (We don't have any record of this company)
+        500:
+          description: Internal Server Error
+  /companies/{organization_number}/share_classes:
+    get:
+      summary: Share classes for a given company
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: organization_number
+        description: Organization number
+        required: true
+        type: string
+        pattern: "^\\d{6}-?\\d{4}$"
+      responses:
+        200:
+          description: Share classes for a given company
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ShareClass'
         400:
           description: Bad Request (Invalid or missing org_number)
         401:
@@ -290,3 +319,15 @@ definitions:
         type: string
         description: (om personen är registrerad utomlands)
 
+  ShareClass:
+    type: object
+    properties:
+      name:
+        type: string
+        description: (namnet på aktieklassen)
+      amount:
+        type: string
+        description: (antal aktier i aktieklassen)
+      vote_weight:
+        type: string
+        description: (voteringsvikt)
